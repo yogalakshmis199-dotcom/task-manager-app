@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <h1>Task Manager</h1>
+    <p class="sub">Add what you need to do, tick it off when it's done.</p>
+
+    <form id="taskForm">
+      <div class="full">
+        <input type="text" id="title" placeholder="What needs to be done?" maxlength="120" aria-label="Task title">
+      </div>
+      <select id="priority" aria-label="Priority">
+        <option>High</option>
+        <option selected>Medium</option>
+        <option>Low</option>
+      </select>
+      <input type="date" id="due" aria-label="Due date">
+      <p id="err" class="full" role="alert"></p>
+      <button class="add full" type="submit" id="addBtn">Add task</button>
+    </form>
+
+    <div class="bar">
+      <div class="tabs" id="tabs">
+        <button class="tab" data-f="all" aria-pressed="true">All</button>
+        <button class="tab" data-f="active" aria-pressed="false">Active</button>
+        <button class="tab" data-f="done" aria-pressed="false">Done</button>
+      </div>
+      <span id="count"></span>
+    </div>
+
+    <ul id="list"></ul>
+    <button class="clear" id="clearDone">Clear completed tasks</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
